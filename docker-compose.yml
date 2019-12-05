@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  pseudo-article:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    entrypoint: ["python", "/app/pseudo_article/run.py"]
+
+  save-article:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    entrypoint: ["python", "/app/save_article/run.py"]
+
+  tag-sorting:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    entrypoint: ["python", "/app/tag_sorting/run.py"]
